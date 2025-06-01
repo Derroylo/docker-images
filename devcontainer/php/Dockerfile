@@ -86,8 +86,8 @@ RUN for _ppa in 'ppa:ondrej/php' 'ppa:ondrej/apache2'; do add-apt-repository -y 
     && chown -R ${USER}:${USER_GROUP} /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2 /var/www/html \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./apache2/httpd.conf /etc/apache2/apache2.conf
-COPY ./apache2/envvars /etc/apache2/envvars
+COPY apache2/httpd.conf /etc/apache2/apache2.conf
+COPY apache2/envvars /etc/apache2/envvars
 
 # Enable apache modules
 RUN a2enmod headers rewrite proxy proxy_fcgi proxy_http ssl
