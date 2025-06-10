@@ -92,6 +92,13 @@ COPY apache2/envvars /etc/apache2/envvars
 # Enable apache modules
 RUN a2enmod headers rewrite proxy proxy_fcgi proxy_http ssl
 
+# Save bash history
+RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
+    && mkdir /commandhistory \
+    && touch /commandhistory/.bash_history \
+    && chown -R $USER /commandhistory \
+    && echo "$SNIPPET" >> "/home/$USER/.bashrc"
+
 # Expose port 8080
 EXPOSE 8080
 
