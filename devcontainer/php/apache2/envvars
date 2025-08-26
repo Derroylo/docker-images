@@ -1,4 +1,4 @@
-export APACHE_DOCROOT=/var/www/html/public
+export APACHE_DOCROOT=/var/www/html
 export APACHE_SERVER_NAME="dev.localhost"
 export APACHE_RUN_USER="webdev"
 export APACHE_RUN_GROUP="webdev"
