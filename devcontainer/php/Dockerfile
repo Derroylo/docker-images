@@ -67,7 +67,6 @@ RUN for _ppa in 'ppa:ondrej/php' 'ppa:ondrej/apache2'; do add-apt-repository -y 
         php-common \
         php-curl \
         php-date \
-        php-dom \
         php-fpm \
         php-gd \
         php-intl \
@@ -84,15 +83,7 @@ RUN for _ppa in 'ppa:ondrej/php' 'ppa:ondrej/apache2'; do add-apt-repository -y 
         php-xdebug \
         php-xml \
         php-zip \
-        php-opcache \
-        php-simplexml \
-        php-xmlreader \
-        php-xmlwriter \
-        php-phar \
-        php-fileinfo \
-        php-ctype \
         php-filter \
-        php-posix \
     && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load \
     && chown -R ${USER}:${USER_GROUP} /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2 /var/www/html \
     && rm -rf /var/lib/apt/lists/*
